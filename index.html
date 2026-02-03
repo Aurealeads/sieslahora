@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,19 +64,29 @@
             color: #ff6600;
             text-decoration: underline;
         }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
     </style>
 </head>
 <body>
-<nav style="background-color: #333; padding: 10px; text-align: center;">
-    <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Home</a>
-    <a href="secondpage.html" style="color: white; text-decoration: none; margin: 0 15px;">Informativa sulla Privacy</a>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="secondpage.html">Informativa sulla Privacy</a>
 </nav>
 
 <div class="container">
      <h1>Bienvenido a SieslaHora</h1>
     <h2>Regístrate para obtener cupones exclusivos</h2>
 
-    <form action="/submit" method="post">
+    <form id="signupForm">
         <label for="first_name">Nombre</label>
         <input type="text" id="first_name" name="first_name" placeholder="Introduce tu nombre" required>
 
@@ -98,17 +108,17 @@
         <input type="date" id="dob" name="dob" required>
 
         <label>
-            <input type="checkbox" name="newsletter_consent" value="yes" required>
+            <input type="checkbox" name="consent_1" required>
            He leído la <a href="secondpage.html" target="_blank"> Política de privacidad</a> y acepto suscribirme a la newsletter de SieslaHora y recibir las mejores ofertas de la semana.
         </label>
 
         <label>
-            <input type="checkbox" name="newsletter_consent" value="yes">
+            <input type="checkbox" name="consent_2">
             He leído la <a href="secondpage.html" target="_blank"> Política de privacidad</a> y acepto recibir comunicaciones promocionales de SieslaHora relacionadas con productos y servicios de terceros seleccionados.
         </label>
 
         <label>
-           <input type="checkbox" name="newsletter_consent" value="yes">
+           <input type="checkbox" name="consent_3">
             Consiento la cesión de mis datos personales a terceros que podrán enviarme ofertas promocionales por correo electrónico.
         </label>
 
@@ -117,19 +127,18 @@
 
     <p class="reglement-link">
         Participando aceptas los
-<a href="sieslahorareglamento.pdf" target="_blank">
-términos del reglamento de la promoción "sieslahora"
+        <a href="sieslahorareglamento.pdf" target="_blank">
+        términos del reglamento de la promoción "sieslahora"
         </a>
     </p>
 </div>
 
 <script>
-    function redirectToSuccess(event) {
-        event.preventDefault();
-        window.location.href = "./success.html";
-    }
+document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Qui puoi aggiungere invio a server via fetch se vuoi
+    window.location.href = "success.html";
+});
 </script>
 </body>
 </html>
-
-
