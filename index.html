@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sieslahora</title>
+    <title>SieslaHora</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
             border-radius: 8px;
         }
         h1 {
-            color: #f4b400;
+            color: #ff6600;
         }
         h2 {
             color: #333;
@@ -45,7 +45,7 @@
             font-size: 16px;
         }
         button {
-            background-color: #f4b400;
+            background-color: #ff6600;
             color: #ffffff;
             padding: 15px 20px;
             border: none;
@@ -54,19 +54,26 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: #e09e00;
+            background-color: #e65c00;
+        }
+        .reglement-link {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .reglement-link a {
+            color: #ff6600;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-
 <nav style="background-color: #333; padding: 10px; text-align: center;">
-    <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Inicio</a>
-    <a href="secondpage.html" style="color: white; text-decoration: none; margin: 0 15px;">Política de Privacidad</a>
+    <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Home</a>
+    <a href="secondpage.html" style="color: white; text-decoration: none; margin: 0 15px;">Informativa sulla Privacy</a>
 </nav>
 
 <div class="container">
-    <h1>Bienvenido a Sieslahora</h1>
+     <h1>Bienvenido a Sieslahora</h1>
     <h2>Regístrate para obtener cupones exclusivos</h2>
 
     <form action="/submit" method="post">
@@ -90,25 +97,41 @@
         <label for="dob">Fecha de Nacimiento</label>
         <input type="date" id="dob" name="dob" required>
 
+
+        <label for="data_nascita">Fecha de Nacimiento</label>
+        <input type="date" id="data_nascita" name="data_nascita">
+
         <label>
-            <input type="checkbox" name="newsletter_consent" value="yes" required>
-            He leído la política de privacidad y acepto registrarme en el boletín de Ofertas18Coupons para recibir actualizaciones exclusivas.
+            <input type="checkbox" name="iscrizione_newsletter" value="sì">
+           He leído la<a href="secondpage.html" target="_blank">Política de privacidad</a> y acepto registrarme en el boletín de Sieslahora para recibir actualizaciones exclusivas.
         </label>
 
         <label>
-            <input type="checkbox" name="promotions_consent" value="yes" required>
+            <input type="checkbox" name="promozioni_LaTuaFortunaOggi" value="sì">
+            He leído la<a href="secondpage.html" target="_blank">Política de privacidad</a> y acepto registrarme en el boletín de Sieslahora para recibir actualizaciones exclusivas.
+        </label>
+
+        <label>
+            <input type="checkbox" name="dati_a_terzi" value="sì">
             Doy mi consentimiento para recibir comunicaciones promocionales sobre productos y servicios de terceros seleccionados por Ofertas18Coupons.
-        </label>
-
-        <label>
-            <input type="checkbox" name="data_sharing_consent" value="yes" required>
-            Acepto que mis datos personales sean compartidos con terceros que me enviarán ofertas promocionales por correo electrónico.
         </label>
 
         <button type="submit">Regístrate Ahora</button>
     </form>
+
+    <p class="reglement-link">
+        Participando aceptas los
+<a href="Sieslahora_reglamento.pdf" target="_blank">
+términos del reglamento de la promoción "Sieslahora"
+        </a>.
+    </p>
 </div>
 
+<script>
+    function redirectToSuccess(event) {
+        event.preventDefault();
+        window.location.href = "success.html";
+    }
+</script>
 </body>
-
 </html>
