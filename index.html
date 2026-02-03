@@ -134,11 +134,13 @@
 </div>
 
 <script>
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // Qui puoi aggiungere invio a server via fetch se vuoi
-    window.location.href = "success.html";
-});
+
+    function redirectToSuccess(event) {
+        event.preventDefault();
+        window.location.href = "success.html";
+    }
+
 </script>
 </body>
 </html>
+
