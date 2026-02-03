@@ -12,6 +12,16 @@
             background-color: #f9f9f9;
             color: #333;
         }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
         .container {
             text-align: center;
             padding: 50px;
@@ -64,16 +74,6 @@
             color: #ff6600;
             text-decoration: underline;
         }
-        nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
     </style>
 </head>
 <body>
@@ -84,7 +84,7 @@
 
 <div class="container">
      <h1>Bienvenido a SieslaHora</h1>
-    <h2>Regístrate para obtener cupones exclusivos</h2>
+     <h2>Regístrate para obtener cupones exclusivos</h2>
 
     <form id="signupForm">
         <label for="first_name">Nombre</label>
@@ -134,13 +134,11 @@
 </div>
 
 <script>
-
-    function redirectToSuccess(event) {
-        event.preventDefault();
-        window.location.href = "success.html";
-    }
-
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // blocca il POST → nessun 405
+    // redirect a pagina di successo
+    window.location.href = "success.html";
+});
 </script>
 </body>
 </html>
-
